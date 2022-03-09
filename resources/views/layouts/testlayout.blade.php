@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <title>Document</title>
 </head>
-<body>
+<body class=" bg-dark text-white">
     @yield('content')
 </body>
 </html>
