@@ -51,6 +51,16 @@ class ComicController extends Controller
         $comic = Comic::find($id);
 
         return view('myview.show', compact('comic'));
+
+        /**
+         *  Metodo alternativo che richiede modifica della view show.blade.php :
+         * 
+         *     public function show(Comic $myview)
+         *       {
+         *
+         *           return view('myview.show', compact('myview'));
+         *      }
+         */
     }
 
     /**
