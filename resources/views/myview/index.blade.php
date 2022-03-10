@@ -14,6 +14,7 @@
         <th class="align-middle text-center" scope="col">Info</th>
       </tr>
     </thead>
+
     <tbody>
         @foreach ($comics as $item)
             <tr>
@@ -29,4 +30,6 @@
         @endforeach
     </tbody>
   </table>
+
+  <a href="{{route("myview.create")}}"><button type="button" class="btn btn-secondary">Add comic</button></a>
 @endsection
