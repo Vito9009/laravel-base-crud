@@ -26,9 +26,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        $comic = Comic::all();
-
-        return view('myview.create', compact('comic'));
+        return view('myview.create');
     }
 
     /**
@@ -39,7 +37,20 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $newInfo = new Comic();
+        $newInfo->title = $data['title'];
+        $newInfo->description = $data['description'];
+        $newInfo->thumb = $data['thumb'];
+        $newInfo->price = $data['price'];
+        $newInfo->series = $data['series'];
+        $newInfo->sale_date = $data['sale_date'];
+        $newInfo->type = $data['type'];
+
+        $newInfo->save();
+
+        return redirect()->route('myview.show', $newInfo->id);
     }
 
     /**
@@ -71,9 +82,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comic $comic)
     {
-        //
+        return view('myview.edit', compact('comic'));
     }
 
     /**
@@ -83,9 +94,21 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $data = $request->all();
+
+        $comic->title = $data['title'];
+        $comic->description = $data['description'];
+        $comic->thumb = $data['thumb'];
+        $comic->price = $data['price'];
+        $comic->series = $data['series'];
+        $comic->sale_date = $data['sale_date'];
+        $comic->type = $data['type'];
+
+        $comic->save();
+
+        return redirect()->route('myview.show', $comic->id);
     }
 
     /**
@@ -94,8 +117,10 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+
+        return redirect()->route('myview.index');
     }
 }

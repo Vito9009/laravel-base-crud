@@ -4,7 +4,7 @@
     <div class="container">
         <h3 class="text-center my-5">Inserisci un nuovo fumetto</h3>
 
-        <form action="{{route("myview.store")}}" method="POST">
+        <form action="{{route('myview.store')}}" method="POST">
 
             @csrf
 
@@ -43,9 +43,7 @@
                 <input class="form-control" type="text" placeholder="Categoria del fumetto" id="type" name="type">        
             </div>
 
-            <div class="text-center">
-                <button type="button" class="btn btn-secondary my-5 text-center">Aggiungi il prodotto</button>
-            </div>
+            <button type="button" class="btn btn-secondary my-5 text-center">Aggiungi il prodotto</button>
         </form>
     </div>
 

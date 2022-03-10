@@ -12,6 +12,8 @@
         <th class="align-middle text-center" scope="col">Sale date</th>
         <th class="align-middle text-center" scope="col">Type</th>
         <th class="align-middle text-center" scope="col">Info</th>
+        <th class="align-middle text-center" scope="col">Modifica</th>
+        <th class="align-middle text-center" scope="col">Elimina</th>
       </tr>
     </thead>
 
@@ -26,10 +28,22 @@
                 <td class="align-middle text-center">{{$item["sale_date"]}}</td>
                 <td class="align-middle text-center">{{$item["type"]}}</td>
                 <td class="align-middle text-center"><a href="{{route("myview.show", $item->id)}}"><button type="button" class="btn btn-secondary">Read More</button></a></td>
+                <td class="align-middle text-center"><a href="{{route("myview.edit", $item->id)}}"><button type="button" class="btn btn-secondary">Modifica</button></a></td>
+                <td class="align-middle text-center">
+                  <form action="{{route("myview.destroy", $item->id)}}" method="POST">
+
+                    @csrf
+                    @method("DELETE")
+                    <button type="button" class="btn btn-secondary">Elimina</button>
+
+                  </form>
+                </td>
             </tr>
         @endforeach
     </tbody>
   </table>
 
-  <a href="{{route("myview.create")}}"><button type="button" class="btn btn-secondary">Add comic</button></a>
+  <div class="text-center my-5">
+    <a href="{{route("myview.create")}}"><button type="button" class="btn btn-secondary">Add comic</button></a>
+  </div>
 @endsection
