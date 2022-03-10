@@ -44,7 +44,9 @@
                 <input class="form-control" type="text" placeholder="Categoria del fumetto" id="type" name="type" value="{{$comic->type}}">        
             </div>
 
-            <button type="submit" class="btn btn-secondary my-5 text-center">Salva modifiche</button>
+            <div class="text-center">
+                <button type="submit" class="btn btn-secondary my-5 text-center">Save</button>
+            </div>
         </form>
     </div>
 

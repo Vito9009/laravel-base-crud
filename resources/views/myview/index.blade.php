@@ -12,8 +12,8 @@
         <th class="align-middle text-center" scope="col">Sale date</th>
         <th class="align-middle text-center" scope="col">Type</th>
         <th class="align-middle text-center" scope="col">Info</th>
-        <th class="align-middle text-center" scope="col">Modifica</th>
-        <th class="align-middle text-center" scope="col">Elimina</th>
+        <th class="align-middle text-center" scope="col">Edit</th>
+        <th class="align-middle text-center" scope="col">Delete</th>
       </tr>
     </thead>
 
@@ -28,13 +28,13 @@
                 <td class="align-middle text-center">{{$item["sale_date"]}}</td>
                 <td class="align-middle text-center">{{$item["type"]}}</td>
                 <td class="align-middle text-center"><a href="{{route("myview.show", $item->id)}}"><button type="button" class="btn btn-secondary">Read More</button></a></td>
-                <td class="align-middle text-center"><a href="{{route("myview.edit", $item->id)}}"><button type="button" class="btn btn-secondary">Modifica</button></a></td>
+                <td class="align-middle text-center"><a href="{{route("myview.edit", $item->id)}}"><button type="button" class="btn btn-secondary">Edit</button></a></td>
                 <td class="align-middle text-center">
                   <form action="{{route("myview.destroy", $item->id)}}" method="post">
 
                     @csrf
                     @method("DELETE")
-                    <button type="submit" class="btn btn-secondary">Elimina</button>
+                    <button type="submit" class="btn btn-secondary" onclick="return confirm('Sei sicuro? Il prodotto verrà eliminato definitivamente')">Delete</button>
 
                   </form>
                 </td>
