@@ -26,7 +26,7 @@
 
             <div class="form-group">
                 <label for="exampleInputEmail1">Price</label>
-                <input class="form-control" type="number" placeholder="Prezzo del fumetto" id="price" name="price" value="{{$comic->price}}">
+                <input class="form-control" type="number" step="0.01" placeholder="Prezzo del fumetto" id="price" name="price" value="{{$comic->price}}">
             </div>
 
             <div class="form-group">
@@ -44,7 +44,7 @@
                 <input class="form-control" type="text" placeholder="Categoria del fumetto" id="type" name="type" value="{{$comic->type}}">        
             </div>
 
-            <button type="button" class="btn btn-secondary my-5 text-center">Salva modifiche</button>
+            <button type="submit" class="btn btn-secondary my-5 text-center">Salva modifiche</button>
         </form>
     </div>
 

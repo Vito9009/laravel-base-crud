@@ -4,7 +4,7 @@
     <div class="container">
         <h3 class="text-center my-5">Inserisci un nuovo fumetto</h3>
 
-        <form action="{{route('myview.store')}}" method="POST">
+        <form action="{{route('myview.store')}}" method="post">
 
             @csrf
 
@@ -25,7 +25,7 @@
 
             <div class="form-group">
                 <label for="exampleInputEmail1">Price</label>
-                <input class="form-control" type="number" placeholder="Prezzo del fumetto" id="price" name="price">
+                <input class="form-control" type="number" step="0.01" placeholder="Prezzo del fumetto" id="price" name="price">
             </div>
 
             <div class="form-group">
@@ -43,7 +43,7 @@
                 <input class="form-control" type="text" placeholder="Categoria del fumetto" id="type" name="type">        
             </div>
 
-            <button type="button" class="btn btn-secondary my-5 text-center">Aggiungi il prodotto</button>
+            <button type="submit" class="btn btn-secondary my-5 text-center">Aggiungi il prodotto</button>
         </form>
     </div>
 

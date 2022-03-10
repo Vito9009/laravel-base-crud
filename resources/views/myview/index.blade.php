@@ -30,11 +30,11 @@
                 <td class="align-middle text-center"><a href="{{route("myview.show", $item->id)}}"><button type="button" class="btn btn-secondary">Read More</button></a></td>
                 <td class="align-middle text-center"><a href="{{route("myview.edit", $item->id)}}"><button type="button" class="btn btn-secondary">Modifica</button></a></td>
                 <td class="align-middle text-center">
-                  <form action="{{route("myview.destroy", $item->id)}}" method="POST">
+                  <form action="{{route("myview.destroy", $item->id)}}" method="post">
 
                     @csrf
                     @method("DELETE")
-                    <button type="button" class="btn btn-secondary">Elimina</button>
+                    <button type="submit" class="btn btn-secondary">Elimina</button>
 
                   </form>
                 </td>
